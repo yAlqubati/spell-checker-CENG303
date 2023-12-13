@@ -4,6 +4,7 @@
 # please if you'll modify the code add comments to explain what you did
 # write a meaningful commit message
 
+# just a test
 from Trie import Trie
 
 # create a trie
