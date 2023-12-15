@@ -1,3 +1,4 @@
+from levensteinDistance import levensteinDistance
 class BKNode:
     def __init__(self,word):
         self.word = word
@@ -13,14 +14,7 @@ class BKTree:
 
     # to insert one word into the tree in a recursive way
     def insert(self, word):
-            """
-            Inserts a word into the BKTree.
-
-            Parameters:
-            word (str): The word will be inserted in the tree.
-
-            Returns: None 
-            """
+            
             # if the tree is empty
             if self.root is None:
                 self.root = BKNode(word)
@@ -30,8 +24,9 @@ class BKTree:
                 
                 # use a temp node to traverse the tree
                 temp = self.root
-                # calculate the edit distance between the new word and the root(need to be implemented)
-                distance = 10 # temp value we'll change it later
+
+                # calculate the edit distance between the new word and the root
+                distance =  levensteinDistance(word, temp.word)
 
                 #check if that distance is already in the children of the root
                 if distance in temp.children:

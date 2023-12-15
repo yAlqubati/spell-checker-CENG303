@@ -5,16 +5,15 @@
 # write a meaningful commit message
 
 # just a test
-from Trie import Trie
+from BKTree import BKTree
+from BKTree import BKNode
 
-# create a trie
-trie = Trie()
+tree = BKTree()
+tree.insert("hello")
+tree.insert("hi")
+tree.insert("hola")
+tree.insert("bye")
 
-# read the file and insert the words into the trie
-with open('dictionary.txt','r') as f:
-    for line in f:
-        word = line.strip()
-        trie.insert(word)
 
-# read the file and search the words in the trie
-print(trie.search('imagination'))
+
+

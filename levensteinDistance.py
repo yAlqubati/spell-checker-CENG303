@@ -30,6 +30,8 @@ def levensteinDistance(word1, word2):
     return distances[row][col]
 
 # Test cases
+"""
 print(levensteinDistance("kitten", "sitting")) # 3
 print(levensteinDistance("rosettacode", "raisethysword")) # 8
 print(levensteinDistance("cool", "aool")) # 1
+"""
