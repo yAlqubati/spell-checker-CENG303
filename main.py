@@ -14,6 +14,8 @@ tree.insert("hi")
 tree.insert("hola")
 tree.insert("bye")
 
+print(tree.search("bya",1))
+
 
 
 
