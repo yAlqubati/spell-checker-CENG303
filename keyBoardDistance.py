@@ -20,16 +20,20 @@ def keyboardDistance(let1, let2):
     coordinate2 = findCoordinates(let2.lower())
 
     if coordinate1 and coordinate2:
-        # Calculates the distance as the sum of the absolute value of the differences in row and column indices
-        distance = abs(coordinate1[0] - coordinate2[0]) + abs(coordinate1[1] - coordinate2[1])
-        return distance
+        # Checks if the letters are adjacent vertically, horizontally, or diagonally
+        diffInRow = abs(coordinate1[0] - coordinate2[0])
+        diffInColum = abs(coordinate1[1] - coordinate2[1])
+        keyboardDistance = diffInRow + diffInColum
+        if diffInRow <= 1 and diffInColum <= 1:
+            return 1
+        else:
+            return keyboardDistance
     else:
         return "Invalid letters. Please provide valid letters from the QWERTY keyboard."
 
 
 
-# Function checks if the letters are next to each other on the keyboard
-def is_neighbors(letter1, letter2):
+def is_neighbors(let1, let2):
     # Define the QWERTY keyboard layout
     keyboardLayout = [
         "1234567890",
@@ -49,18 +53,19 @@ def is_neighbors(letter1, letter2):
     coordinate1 = findCoordinates(let1.lower())
     coordinate2 = findCoordinates(let2.lower())
 
+
     if coordinate1 and coordinate2:
-        # Calculates the distance as the sum of the absolute value of the differences in row and column indices
-        distance = abs(coordinate1[0] - coordinate2[0]) + abs(coordinate1[1] - coordinate2[1])
-        if distance < 2:
+        # Checks if the letters are adjacent vertically, horizontally, or diagonally
+        diffInRow = abs(coordinate1[0] - coordinate2[0])
+        diffInColum = abs(coordinate1[1] - coordinate2[1])
+        
+
+        if diffInRow <= 1 and diffInColum <= 1:
             return True
         else:
             return False
     else:
         return "Invalid letters. Please provide valid letters from the QWERTY keyboard."
-
-
-
 
 
 # Example usage:
@@ -72,7 +77,7 @@ result = keyboardDistance(letter1, letter2)
 print(f"The distance between {letter1} and {letter2} on the keyboard is: {result}")
 
 # Test the distance between two letters on the keyboard
-letter1 = 'q'
+letter1 = 'a'
 letter2 = 'w'
 result = keyboardDistance(letter1, letter2)
 print(f"The distance between {letter1} and {letter2} on the keyboard is: {result}")
@@ -84,8 +89,8 @@ result = is_neighbors(let1, let2)
 print(f"Are {let1} and {let2} neighbors on the keyboard? {result}")
 
 # Test if two letters are neighbors on the keyboard
-let1 = 'q'
-let2 = 'w'
+let1 = 'l'
+let2 = 'p'
 result = is_neighbors(let1, let2)
 print(f"Are {let1} and {let2} neighbors on the keyboard? {result}")
 
