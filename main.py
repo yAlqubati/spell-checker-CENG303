@@ -6,16 +6,33 @@
 
 # just a test
 from BKTree import BKTree
-from BKTree import BKNode
+import time
 
 tree = BKTree()
-tree.insert("hello")
-tree.insert("hi")
-tree.insert("hola")
-tree.insert("bye")
 
-print(tree.search("bya",1))
+# insert all the words in the dictionary
 
+filePath = "dictionary.txt"
+
+start = time.time()
+with open(filePath) as file:
+    for line in file:
+        line = line.strip()
+        tree.insert(line)
+
+end = time.time()
+print("insertion time: ", end - start)
+
+# search for a word
+word = "peanet"
+start = time.time()
+suggestions = tree.search(word, 2)
+end = time.time()
+print("search time: ", end - start)
+print(suggestions)
+
+i = tree.wordInTree()
+print(i)
 
 
 
