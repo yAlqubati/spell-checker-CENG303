@@ -1,5 +1,6 @@
 from collections import deque
 from levensteinDistance import levensteinDistance
+from keyBoardDistance import getWordDistance
 
 class BKNode:
     def __init__(self, word):
@@ -50,6 +51,11 @@ class BKTree:
             temp = container.popleft()
             distance = levensteinDistance(word, temp.word)
 
+            if distance == 0:
+                results.clear()
+                results.append("The word is in the dictionary")
+                return results
+
             # If the distance is in the range, add the word to the results
             if distance <= max_distance:
                 results.append(temp.word)
@@ -60,7 +66,12 @@ class BKTree:
             # Add the children of the node to the container if they are in the range
             container.extend(child for distance, child in temp.children.items() if lower_bound <= distance <= upper_bound)
 
-        return results
+        finalResults = []
+
+        for suggestion in results:
+            if getWordDistance(word, suggestion) <= max_distance:
+                finalResults.append(suggestion)
+        return finalResults
 
     def wordInTree(self):
         counter = 0

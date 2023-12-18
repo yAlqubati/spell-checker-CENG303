@@ -21,7 +21,7 @@ end = time.time()
 print("insertion time: ", end - start)
 
 # search for a word
-word = "distribtuion"
+word = "apple"
 start = time.time()
 suggestions = tree.search(word, 2)
 end = time.time()
@@ -32,4 +32,5 @@ i = tree.wordInTree()
 print(i)
 
 print(levensteinDistance("conseqeunce", "consequence"))
+
 
