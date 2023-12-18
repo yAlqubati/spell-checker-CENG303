@@ -68,6 +68,24 @@ def is_neighbors(let1, let2):
         return "Invalid letters. Please provide valid letters from the QWERTY keyboard."
 
 
+def getWordDistance(source, target):
+    # Define the QWERTY keyboard layout
+    keyboardLayout = [
+        "1234567890",
+        "qwertyuiop",
+        "asdfghjkl",
+        "zxcvbnm"
+    ]
+    distance = 0
+    length = min(len(source), len(target))
+
+    for i in range(length):
+        if source[i] != target[i]:
+            distance += keyboardDistance(source[i], target[i])
+    
+    return distance
+
+
 # Example usage:
 
 #Test the distance between two letters on the keyboard
