@@ -7,6 +7,7 @@
 # just a test
 from BKTree import BKTree
 import time
+from levensteinDistance import levensteinDistance
 
 tree = BKTree()
 
@@ -20,7 +21,7 @@ end = time.time()
 print("insertion time: ", end - start)
 
 # search for a word
-word = "peankt"
+word = "distribtuion"
 start = time.time()
 suggestions = tree.search(word, 2)
 end = time.time()
@@ -29,4 +30,6 @@ print(suggestions)
 
 i = tree.wordInTree()
 print(i)
+
+print(levensteinDistance("conseqeunce", "consequence"))
 
