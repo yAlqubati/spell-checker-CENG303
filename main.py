@@ -15,16 +15,12 @@ tree = BKTree()
 filePath = "dictionary.txt"
 
 start = time.time()
-with open(filePath) as file:
-    for line in file:
-        line = line.strip()
-        tree.insert(line)
-
+tree.insertFromFile(filePath)
 end = time.time()
 print("insertion time: ", end - start)
 
 # search for a word
-word = "peanet"
+word = "peankt"
 start = time.time()
 suggestions = tree.search(word, 2)
 end = time.time()
@@ -33,6 +29,4 @@ print(suggestions)
 
 i = tree.wordInTree()
 print(i)
-
-
 

@@ -1,5 +1,6 @@
 from bisect import bisect_left, bisect_right
 from levensteinDistance import levensteinDistance
+from keyBoardDistance import getWordDistance
 class BKNode:
     def __init__(self, word):
         self.word = word
@@ -60,7 +61,15 @@ class BKTree:
 
         # Start the recursive search from the root of the tree.
         search_recursive(self.root, target, max_distance, results)
-        return results
+
+        # Filter the results according to the keyboard distance
+        finalResults = []
+        for word in results:
+            # we can adjust the max distance later
+            if getWordDistance(target, word) <= max_distance:
+                finalResults.append(word)
+        
+        return finalResults
     
     def wordInTree(self):
         counter = 0
@@ -89,3 +98,5 @@ class BKTree:
             # insert all the words in the dictionary
             for word in dictionary:
                 self.insert(word)
+
+

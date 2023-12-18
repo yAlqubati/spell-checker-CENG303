@@ -87,7 +87,7 @@ def getWordDistance(source, target):
 
 
 # Example usage:
-
+'''
 #Test the distance between two letters on the keyboard
 letter1 = 'q'
 letter2 = 'k'
@@ -112,5 +112,4 @@ let2 = 'p'
 result = is_neighbors(let1, let2)
 print(f"Are {let1} and {let2} neighbors on the keyboard? {result}")
 
-
-
+'''
