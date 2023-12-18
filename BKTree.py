@@ -77,3 +77,15 @@ class BKTree:
             
             count(self.root)
             return counter
+    
+    
+    def insertFromFile(self,fileName):
+            
+            # store the words in the dictionary in a list
+            with open(fileName) as file:
+                # each word will be in a new line
+                dictionary = [line.strip() for line in file]
+    
+            # insert all the words in the dictionary
+            for word in dictionary:
+                self.insert(word)
