@@ -1,13 +1,10 @@
-# just for checking if the word is true or false
-# might change the data structure latter to hash or graph
-# still need to find suggestions for the word and calculate the edit distance
-# please if you'll modify the code add comments to explain what you did
-# write a meaningful commit message
+# need to make a separate class to manage the input and output
 
 # just a test
 from BKTree import BKTree
 import time
 from levensteinDistance import levensteinDistance
+from keyBoardDistance import getWordDistance
 
 tree = BKTree()
 
@@ -21,16 +18,17 @@ end = time.time()
 print("insertion time: ", end - start)
 
 # search for a word
-word = "apple"
+word = "presidnecy"
 start = time.time()
-suggestions = tree.search(word, 2)
+suggestions = tree.search(word, 2,3)
 end = time.time()
 print("search time: ", end - start)
 print(suggestions)
 
 i = tree.wordInTree()
 print(i)
+print(getWordDistance("accept", "acneptable"))
 
-print(levensteinDistance("conseqeunce", "consequence"))
+
 
 

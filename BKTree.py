@@ -38,7 +38,7 @@ class BKTree:
             temp.children[distance] = BKNode(word)
             break
 
-    def search(self, word, max_distance):
+    def search(self, word, max_distance,max_Keyboard_distance):
         if self.root is None:
             return []
         
@@ -69,8 +69,10 @@ class BKTree:
         finalResults = []
 
         for suggestion in results:
-            if getWordDistance(word, suggestion) <= max_distance:
+            if getWordDistance(word, suggestion) <= max_Keyboard_distance:
                 finalResults.append(suggestion)
+                # sort the results by the distance between the word and the suggestion
+                finalResults.sort(key=lambda x: getWordDistance(word, x))
         return finalResults
 
     def wordInTree(self):
