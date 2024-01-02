@@ -6,8 +6,7 @@ from SpellChecker import SpellChecker
 check = SpellChecker(2, 3, "dictionary.txt")
 
 
-print(check.output("aplpe lenght"))
-
+check.testFromFile("Most_Misspelled_Words_in_English.txt","output.txt")
 
 
 

@@ -53,5 +53,36 @@ class SpellChecker:
 
                 print()
 
+
+
         # return the corrected text
         return output
+    
+    def testFromFile(self,inputFile,outputFile):
+        
+        words = []
+        with open(inputFile, 'r') as f:
+            for line in f:
+                words.append(line.strip())
+
+        output = ""
+
+        for word in words:
+            suggestions = self.check(word)
+
+            
+
+            # if the word is in the dictionary, add it to the output
+            if len(suggestions) > 0:
+                output += f'This word "{word}" is not valid. here are the suggestions:'
+                output += "\n"
+                # print every word and the index 
+                for i in range(len(suggestions)):
+                    output += suggestions[i] + " "
+
+                
+                output += "\n"
+
+            # write the output to the file
+        with open(outputFile, 'w') as f:
+            f.write(output)
