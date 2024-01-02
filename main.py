@@ -9,6 +9,9 @@ from BKTree import BKTree
 import time
 
 tree = BKTree()
+with open('Most_Misspelled_Words_in_English.txt','r') as file:
+    content=file.read()
+    print(content)
 
 # insert all the words in the dictionary
 
@@ -24,12 +27,16 @@ end = time.time()
 print("insertion time: ", end - start)
 
 # search for a word
-word = "peanet"
+word = content
 start = time.time()
 suggestions = tree.search(word, 2)
 end = time.time()
 print("search time: ", end - start)
 print(suggestions)
+
+
+with open("output.txt",'w') as file:
+    file.write(content)
 
 i = tree.wordInTree()
 print(i)
