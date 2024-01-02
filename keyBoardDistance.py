@@ -68,8 +68,52 @@ def is_neighbors(let1, let2):
         return "Invalid letters. Please provide valid letters from the QWERTY keyboard."
 
 
-# Example usage:
+def getWordDistance(source, target):
+    # Define the QWERTY keyboard layout
+    keyboardLayout = [
+        "1234567890",
+        "qwertyuiop",
+        "asdfghjkl",
+        "zxcvbnm"
+    ]
 
+    if canSwapLetter(source, target):
+        return 1
+    
+    distance = 0
+    length = min(len(source), len(target))
+
+    for i in range(length):
+        if source[i] != target[i]:
+            distance += keyboardDistance(source[i], target[i])
+    
+    return distance
+
+
+def canSwapLetter(word, correctWord):
+    # Define the QWERTY keyboard layout
+    keyboardLayout = [
+        "1234567890",
+        "qwertyuiop",
+        "asdfghjkl",
+        "zxcvbnm"
+    ]
+
+    for i in range(len(word)):
+        for j in range(len(word)):
+            # if i and j have a difference swap them and check if the word is equal to the correct word
+            if i != j:
+                temp = list(word)
+                temp[i], temp[j] = temp[j], temp[i]
+                temp = ''.join(temp)
+                if temp == correctWord:
+                    return True
+    
+    return False
+
+
+# Example usage:
+'''
 #Test the distance between two letters on the keyboard
 letter1 = 'q'
 letter2 = 'k'
@@ -94,5 +138,4 @@ let2 = 'p'
 result = is_neighbors(let1, let2)
 print(f"Are {let1} and {let2} neighbors on the keyboard? {result}")
 
-
-
+'''
