@@ -7,7 +7,7 @@ in
 to
 have
 it
-I
+i
 that
 for
 you
@@ -1735,12 +1735,14 @@ beauty
 emergency
 unique
 feature
+occurrence
 internal
 ethnic
 link
 stress
 content
 select
+misspell
 root
 nose
 declare

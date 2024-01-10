@@ -1,3 +1,4 @@
+from levensteinDistance import levensteinDistance
 # Function calculates the distance between two letters on a QWERTY keyboard 
 def keyboardDistance(let1, let2):
     # Define the QWERTY keyboard layout
@@ -69,6 +70,9 @@ def is_neighbors(let1, let2):
 
 
 def getWordDistance(source, target):
+
+    if levensteinDistance(source, target) == 1:
+        return 1
     # Define the QWERTY keyboard layout
     keyboardLayout = [
         "1234567890",

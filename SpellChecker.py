@@ -11,10 +11,30 @@ class SpellChecker:
      # this function will return a list of suggestions for the word
     def check(self, word):
         return self.tree.search(word, self.maxDistance, self.maxKeyboardDistance)
+    
+    # this function will filter the input text, remove any character that is not a letter or a space
+    def filterinput(self, inputText):
+        inputText = inputText.lower()
+
+        filtered = ""
+        for char in inputText:
+            # take only the letters and spaces
+            if char.isalpha() or char == " ":
+                filtered += char
+
+        # remove any extra spaces
+        for i in range(len(filtered)-2):
+            
+            if filtered[i] == " " and filtered[i+1] == " ":
+                filtered = filtered[:i] + filtered[i+1:]
+
+        # return the filtered input
+        return filtered
 
     
     # this function will return the corrected text with the suggestions
     def output(self, inputText):
+        inputText = self.filterinput(inputText)
 
         # split the text into words
         words = inputText.split()
@@ -55,8 +75,8 @@ class SpellChecker:
 
 
 
-        # return the corrected text
-        return output
+        print("The corrected text is:")
+        print(output)
     
     def testFromFile(self,inputFile,outputFile):
         
@@ -81,6 +101,7 @@ class SpellChecker:
                     output += suggestions[i] + " "
 
                 
+                output += "\n"
                 output += "\n"
 
             # write the output to the file

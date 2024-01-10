@@ -21,6 +21,7 @@ class BKTree:
 
         temp = self.root
 
+        # if the tree isn't empty, find the correct place for the word
         while True:
             distance = levensteinDistance(word, temp.word)
 
@@ -60,6 +61,7 @@ class BKTree:
             if distance <= max_distance:
                 results.append(temp.word)
 
+            # update the lower and upper bounds
             lower_bound = distance - max_distance
             upper_bound = distance + max_distance
 
@@ -68,6 +70,7 @@ class BKTree:
 
         finalResults = []
 
+        # check if the results are in the range of the keyboard distance
         for suggestion in results:
             if getWordDistance(word, suggestion) <= max_Keyboard_distance:
                 finalResults.append(suggestion)
@@ -75,6 +78,7 @@ class BKTree:
                 finalResults.sort(key=lambda x: getWordDistance(word, x))
         return finalResults
 
+    # count the number of words in the tree
     def wordInTree(self):
         counter = 0
         if self.root is None:
@@ -91,6 +95,7 @@ class BKTree:
             count(self.root)
             return counter
     
+    # insert all the words in the dictionary in the tree
     def insertFromFile(self, fileName):
         # store the words in the dictionary in a list
         with open(fileName) as file:

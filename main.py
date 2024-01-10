@@ -1,12 +1,11 @@
-# need to make a separate class to manage the input and output
-
-# just a test
 from SpellChecker import SpellChecker
 
-check = SpellChecker(2, 3, "dictionary.txt")
+# the parameters are the maximum distance, maximum keyboard distance, and the path to the dictionary file
+# you can change them as you like, the higher the distance the more suggestions you will get
+spellChecker = SpellChecker(2,3,"dictionary.txt")
 
-
-check.testFromFile("Most_Misspelled_Words_in_English.txt","output.txt")
+inputText = input("Enter your text: ")
+spellChecker.output(inputText)
 
 
 

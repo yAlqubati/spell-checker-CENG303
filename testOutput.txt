@@ -1,0 +1,33 @@
+This word "mispell" is not valid. here are the suggestions:
+misspell 
+
+This word "recive" is not valid. here are the suggestions:
+receive recipe recover decide 
+
+This word "occurence" is not valid. here are the suggestions:
+occurrence 
+
+This word "acheive" is not valid. here are the suggestions:
+achieve 
+
+This word "beleif" is not valid. here are the suggestions:
+belief 
+
+This word "receit" is not valid. here are the suggestions:
+recent receive 
+
+This word "conseqeunce" is not valid. here are the suggestions:
+consequence 
+
+This word "secuirty" is not valid. here are the suggestions:
+security 
+
+This word "qell" is not valid. here are the suggestions:
+cell tell sell well hell yell bell 
+
+This word "cmputer" is not valid. here are the suggestions:
+computer 
+
+This word "consciuos" is not valid. here are the suggestions:
+conscious 
+

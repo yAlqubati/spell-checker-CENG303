@@ -1,3 +1,5 @@
+# levenstein Distance or edit distance
+# we used dynamic programming to calculate the distance between two words
 def levensteinDistance(word1, word2):
     # Create a matrix of zeros
     rows = len(word1) + 1
