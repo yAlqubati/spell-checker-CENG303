@@ -82,7 +82,7 @@ def getWordDistance(source, target):
     ]
 
     if canSwapLetter(source, target):
-        return 1
+        return 0
     
     distance = 0
     length = min(len(source), len(target))

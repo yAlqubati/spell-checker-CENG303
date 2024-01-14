@@ -45,6 +45,8 @@ class SpellChecker:
 
             if len(suggestions) == 0:
                 print (f'This word "{word}" is not in the dictionary.')
+                output += word + " "
+                continue
 
             # if the word is in the dictionary, add it to the output
             elif suggestions[0] == "The word is in the dictionary":
